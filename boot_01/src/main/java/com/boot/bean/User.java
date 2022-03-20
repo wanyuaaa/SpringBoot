@@ -1,40 +1,25 @@
 package com.boot.bean;
 
+import lombok.*;
+
 /**
  * @author wanyu
  * @createTime 2022-03-19 23:43
  */
+
+@Data//自动生成get set
+@ToString//编译时生成toString
+@NoArgsConstructor//无参构造器
+//@AllArgsConstructor//全参构造器
+@EqualsAndHashCode//对比
 public class User {
     String name;
     Integer age;
+
     Pet pet;
 
     public User(String name, Integer age) {
         this.name = name;
         this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
     }
 }

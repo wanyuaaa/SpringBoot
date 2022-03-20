@@ -4,8 +4,11 @@ import com.boot.bean.Pet;
 import com.boot.bean.User;
 import com.boot.config.MyConfig;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @author wanyu
@@ -13,7 +16,10 @@ import org.springframework.context.ConfigurableApplicationContext;
  * * 主程序类
  * * @SpringBootApplication：这是一个SpringBoot应用
  */
-@SpringBootApplication(scanBasePackages = "com.boot")
+//@SpringBootApplication(scanBasePackages = "com.boot")//1=3
+@SpringBootConfiguration//表示这是一个配置类
+@EnableAutoConfiguration//
+@ComponentScan("com.boot")//扫描路径
 public class MainApplication {
     public static void main(String[] args) {
         //1、返回我们IOC容器
@@ -39,6 +45,8 @@ public class MainApplication {
 //        User user = bean.user01();
 //        User user1 = bean.user01();
 //        System.out.println(user == user1);
+
+
 
     }
 }

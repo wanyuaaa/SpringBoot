@@ -1,9 +1,11 @@
 package com.boot.config;
 
+import com.boot.bean.Car;
 import com.boot.bean.Pet;
 import com.boot.bean.User;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -23,7 +25,8 @@ import org.springframework.context.annotation.ImportResource;
  *      给容器中自动创建出这两个类型的组件、默认组件的名字就是全类名
  */
 //@Import({User.class})
-@Configuration//(proxyBeanMethods = true)//是否启动单利
+@Configuration(proxyBeanMethods = true)//是否启动单利
+@EnableConfigurationProperties(Car.class)//开启car的属性配置 把组件自动注入到容器中
 //@ConditionalOnBean(name = "tom")//如果存在tom实例，则创建类中实例
 //@ConditionalOnMissingBean(name = "tom")
 //@ImportResource("classpath:beans.xml")//导入原生对象

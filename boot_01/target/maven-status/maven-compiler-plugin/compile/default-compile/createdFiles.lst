@@ -1,5 +1,5 @@
-com\boot\bean\User.class
 com\boot\MainApplication.class
-com\boot\controller\HelloBoot.class
 com\boot\bean\Pet.class
 com\boot\config\MyConfig.class
+com\boot\bean\User.class
+com\boot\controller\HelloBoot.class
